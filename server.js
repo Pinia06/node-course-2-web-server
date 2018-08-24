@@ -1,6 +1,8 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
+//process.env is an object that stores all envirement variables as key value pairs
+const port = process.env.PORT || 3000; // if process.env.PORT doesn't exist port will be set to 3000
 
 var app = express();
 
@@ -53,6 +55,6 @@ app.get('/bad',(req,res) => {
 });
 
 //app.listen(3000);
-app.listen(3000,() =>{
-        console.log('server is up on port 3000'); 
+app.listen(port,() =>{
+        console.log(`server is up on port ${port}`); 
 });
